@@ -1,24 +1,21 @@
-function Tweet({tweet}) {
+import ProfileImage from "./ProfileImage"
+function Tweet(props) {
   return (
     <div className="tweet">
-      <img
-        src={tweet.user.image}
-        className="profile"
-        alt="profile"
-      />
+      <ProfileImage image={props.tweet.user.image} />
 
       <div className="body">
         <div className="top">
           <span className="user">
-            <span className="name">{tweet.user.name}</span>
-            <span className="handle">{tweet.user.handle}</span>
+            <span className="name">{props.tweet.user.name}</span>
+            <span className="handle">{props.tweet.user.handle}</span>
           </span>
 
-          <span className="timestamp">{tweet.timestamp}</span>
+          <span className="timestamp">{props.tweet.timestamp}</span>
         </div>
 
         <p className="message">
-          {tweet.message}
+          {props.tweet.message}
         </p>
 
         <div className="actions">
